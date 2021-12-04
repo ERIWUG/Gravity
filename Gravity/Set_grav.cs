@@ -27,7 +27,6 @@ namespace Gravity
         public bool isTrue;
         int xmax = 969;
         int xmin = 9;
-        TextBox t;
         public Set_grav() { isTrue = false; }
         public Set_grav(int m,int id,Button c)
         {

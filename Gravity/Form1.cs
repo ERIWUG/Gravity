@@ -18,25 +18,33 @@ namespace Gravity
 
         }
 
-        Set_grav g = new Set_grav();
-
+        Set_grav[] g =
+        {
+            new Set_grav(),
+            new Set_grav()
+        };
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
-            g = new Set_grav(1, 0, button1);
-            g.get_v(Convert.ToDouble(numericUpDown1.Value));
-            g.get_vx(Convert.ToDouble(numericUpDown2.Value));
-            g.check_up();
-            textBox2.Text = Convert.ToString(button1.Location.X);
+            g[0] = new Set_grav(1, 0, button1);
+            g[0].get_v(Convert.ToDouble(numericUpDown1.Value));
+            g[0].get_vx(Convert.ToDouble(numericUpDown2.Value));
+
+            g[1] = new Set_grav(1, 0, button2);
+            g[1].get_v(Convert.ToDouble(numericUpDown1.Value));
+            g[1].get_vx(Convert.ToDouble(numericUpDown2.Value));
         }
         bool c = true;
         private void timer1_Tick(object sender, EventArgs e)
         {
 
             //if (c) { c = false;button1_MouseClick(button1, new MouseEventArgs(MouseButtons.Left, 1, 1, 1, 1)); }
-            if (g.isTrue)
+            for (int i = 0; i < 2; i++)
             {
-                if (g.isRest) {  }
-                else { g.check_up(); }
+                if (g[i].isTrue)
+                {
+                    if (g[i].isRest) { }
+                    else { g[i].check_up(); }
+                }
             }
         }
     }
