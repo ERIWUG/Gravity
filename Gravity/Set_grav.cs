@@ -21,7 +21,7 @@ namespace Gravity
         Button c;
         double v_s,h_s,h_m;
         double v,h,h_p;
-        double vx;
+        public double vx;
         int kf = 6;
         public bool isFall, isRest;
         public bool isTrue;
